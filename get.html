@@ -9,7 +9,7 @@
     <title>Silen Linux - download</title>
     <meta name="description" content="Silen Linux ISO images: standard, NVIDIA, Arch and Void variants, with sha256 checksums. Mainline variants currently unavailable.">
     <link rel="icon" href="favicon.png" type="image/png">
-    <link rel="stylesheet" href="styles.css?v=7">
+    <link rel="stylesheet" href="styles.css?v=8">
 </head>
 <body>
 
@@ -19,13 +19,22 @@
             <img src="silen_logo_preffered.png" alt="Silen Linux logo">
             <h1>Silen Linux</h1>
         </a>
-        <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false"><svg class="icon icon-md" viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
+        <div class="nav-search">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+            <input type="text" placeholder="Search">
+        </div>
         <nav id="main-nav">
             <a href="index.html">Overview</a>
             <a href="get.html" class="active">Download</a>
             <a href="packages.html">Packages</a>
             <a href="github.html">GitHub</a>
         </nav>
+        <div class="nav-icons">
+            <a href="https://github.com/Cgtlpa/SilenLinux" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-4.77 0-0.84-.23-1.55-.55-2.22A11.7 11.7 0 0 0 9 15c-3.42-.23-6.5-1.43-7.83-2.84a9.17 9.17 0 0 0-1.13-2.73C2.29 7.46 3 5 4.42 5c1.07 0 2.12.28 2.94.71A11.25 11.25 0 0 1 9 19m14-6v3.87c0 2.19-.88 4.3-2.36 5.76A3.35 3.35 0 0 1 16.41 21a10 10 0 0 0-4.5-1.44c-1.7-1.44-2.54-3.65-2.25-5.76 0-1.5.37-2.86 1.05-4A11.7 11.7 0 0 1 9 3c2.86 0 5.6.87 7.83 2.49A16 16 0 0 1 20 9c0 1.2-.21 2.34-.67 3.37A10 10 0 0 0 23 13c0-.73-.09-1.45-.23-2.12A3.36 3.36 0 0 0 23 13z"/></svg>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false"><svg class="icon icon-md" viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
+        </div>
     </div>
 </div>
 
@@ -47,6 +56,7 @@
                 <h3>Standard</h3>
                 <p class="card-file"><code>silen-linux.iso</code></p>
                 <p class="card-desc">Open drivers with GPU firmware. NVIDIA runs on nouveau; the proprietary driver can be added after install.</p>
+                <a class="btn btn-outline card-btn" href="https://huggingface.co/datasets/vgzz/silen-isos" target="_blank" rel="noopener">Visit ISO repo</a>
             </div>
             <div class="download-card">
                 <div class="card-header">
@@ -55,6 +65,7 @@
                 <h3>NVIDIA</h3>
                 <p class="card-file"><code>silen-linux-nvidia.iso</code></p>
                 <p class="card-desc">Same base; installs the proprietary driver automatically when an NVIDIA GPU is detected.</p>
+                <a class="btn btn-outline card-btn" href="https://huggingface.co/datasets/vgzz/silen-isos" target="_blank" rel="noopener">Visit ISO repo</a>
             </div>
         </div>
         <p class="muted" style="margin-top:24px; font-size:13px;">Hosted on Hugging Face &mdash; GitHub caps files at 2 GB.</p>
@@ -115,7 +126,7 @@ silenfetch   # logo + system info</code></pre>
         <p>Silen Linux v1 &bull; kernel 6.18.54 &bull; AGPLv3</p>
         <nav>
             <a href="https://github.com/Cgtlpa/SilenLinux" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://discord.gg/WxbRRURcZ" target="_blank" rel="noopener">Discord</a>
+            <a href="https://discord.gg/6b4uaaQDzN" target="_blank" rel="noopener">Discord</a>
             <a href="https://huggingface.co/datasets/vgzz/silen-isos" target="_blank" rel="noopener">ISOs</a>
             <a href="https://huggingface.co/datasets/vgzz/spk-pkgs/tree/main/packages" target="_blank" rel="noopener">Package repo</a>
         </nav>

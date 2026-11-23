@@ -1,5 +1,5 @@
 /* Silen Linux - modern, minimal, technical.
-   Charcoal + muted steel palette. No emojis, no AI-generated noise. */
+   Dark charcoal + muted steel palette. No emojis, no AI-generated noise. */
 
 * {
     box-sizing: border-box;
@@ -8,15 +8,15 @@
 }
 
 :root {
-    --bg: #0c0c0e;
-    --surface: #141418;
+    --bg: #0b0b0d;
+    --surface: #131317;
     --surface-hover: #1c1c22;
     --border: #242429;
     --text: #e8e4e0;
     --text-muted: #8e8e94;
     --accent: #8c9ea8;
     --accent-hover: #b3c3cc;
-    --code-bg: #141418;
+    --code-bg: #131317;
     --code-text: #c7c7cc;
     --radius: 4px;
     --max-width: 1320px;
@@ -25,7 +25,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 72px;
+    scroll-padding-top: var(--header-height);
 }
 
 body {
@@ -156,12 +156,12 @@ pre code {
 /* ===== HEADER / NAVIGATION ===== */
 
 .header {
-    background: rgba(12, 12, 14, 0.85);
+    background: rgba(11, 11, 13, 0.9);
     border-bottom: 1px solid var(--border);
     position: sticky;
     top: 0;
     z-index: 100;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(6px);
 }
 
 .header-inner {
@@ -176,6 +176,14 @@ pre code {
     flex-wrap: wrap;
 }
 
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
 .brand img {
     width: 32px;
     height: 32px;
@@ -188,11 +196,46 @@ pre code {
     letter-spacing: -0.04em;
 }
 
+.nav-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 6px 12px;
+    flex-shrink: 0;
+}
+
+.nav-search input {
+    background: transparent;
+    border: none;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+    min-width: 180px;
+}
+
+.nav-search input::placeholder {
+    color: var(--text-muted);
+    opacity: 0.7;
+}
+
+.nav-search svg {
+    width: 16px;
+    height: 16px;
+    stroke: var(--text-muted);
+    flex-shrink: 0;
+}
+
 nav {
     display: flex;
     gap: 36px;
     align-items: center;
     flex-wrap: wrap;
+    flex: 1;
+    min-width: 0;
 }
 
 nav a {
@@ -234,6 +277,37 @@ nav a.active::after {
     width: 100%;
 }
 
+.nav-icons {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.nav-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: var(--text-muted);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: all 0.2s ease;
+}
+
+.nav-icons a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.nav-icons svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+}
+
 .mobile-menu-btn {
     display: none;
     background: none;
@@ -255,31 +329,31 @@ nav a.active::after {
 .page {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 56px 24px 80px;
+    padding: 56px 32px 80px;
 }
 
 /* ===== HERO ===== */
 
 .hero {
-    padding: 72px 24px 96px;
+    padding: 80px 32px 100px;
     text-align: center;
 }
 
 .hero-logo {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 28px;
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 32px;
     display: block;
 }
 
 .hero h1 {
-    font-size: 56px;
+    font-size: 64px;
     margin: 0 0 20px;
     letter-spacing: -0.04em;
 }
 
 .hero p {
-    font-size: 17px;
+    font-size: 18px;
     color: var(--text-muted);
     max-width: 640px;
     margin: 0 auto 32px;
@@ -372,10 +446,6 @@ nav a.active::after {
     white-space: nowrap;
 }
 
-.section-title-sm {
-    font-size: 20px;
-}
-
 /* ===== INTRODUCTION (asymmetric) ===== */
 
 .intro {
@@ -408,33 +478,37 @@ nav a.active::after {
     margin-bottom: 0;
 }
 
-/* ===== FEATURES (single column, not card grid) ===== */
+/* ===== FEATURES (card layout like instantOS) ===== */
 
-.features-list {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
 }
 
 .feature {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 26px 0;
-    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    transition: border-color 0.2s ease;
 }
 
-.feature:last-child {
-    border-bottom: none;
+.feature:hover {
+    border-color: var(--accent);
 }
 
 .feature-icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 16px;
+    display: block;
     flex-shrink: 0;
 }
 
 .feature-content h3 {
     font-size: 17px;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 .feature-content p {
@@ -545,6 +619,60 @@ nav a.active::after {
     border-color: var(--accent);
 }
 
+/* ===== DOWNLOAD CARDS ===== */
+
+.download-cards {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+}
+
+.download-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.2s ease;
+}
+
+.download-card:hover {
+    border-color: var(--accent);
+}
+
+.download-card .card-header {
+    margin-bottom: 20px;
+}
+
+.download-card h3 {
+    font-size: 20px;
+    margin: 0 0 12px;
+}
+
+.download-card .card-file {
+    font-family: ui-monospace, "DejaVu Sans Mono", "Liberation Mono", monospace;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 0 0 16px;
+    word-break: break-all;
+}
+
+.download-card .card-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 0 0 24px;
+    line-height: 1.6;
+    flex: 1;
+}
+
+.download-card .card-btn {
+    margin-top: auto;
+}
+
 /* ===== TABLES ===== */
 
 .table-wrap {
@@ -618,59 +746,11 @@ tr:last-child td {
     background: rgba(140, 158, 168, 0.08);
 }
 
-/* ===== DOWNLOAD CARDS ===== */
-
-.download-cards {
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
-    margin-top: 24px;
-}
-
-.download-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 32px;
-    flex: 1;
-    min-width: 280px;
-    display: flex;
-    flex-direction: column;
-}
-
-.download-card .card-header {
-    margin-bottom: 20px;
-}
-
-.download-card h3 {
-    font-size: 20px;
-    margin: 0 0 12px;
-}
-
-.download-card .card-file {
-    font-family: ui-monospace, "DejaVu Sans Mono", "Liberation Mono", monospace;
-    font-size: 13px;
-    color: var(--text-muted);
-    margin: 0 0 16px;
-    word-break: break-all;
-}
-
-.download-card .card-desc {
-    font-size: 13px;
-    color: var(--text-muted);
-    margin: 0;
-    line-height: 1.6;
-}
-
-td code {
-    font-size: 0.9em;
-}
-
 /* ===== FOOTER ===== */
 
 .footer {
     border-top: 1px solid var(--border);
-    padding: 48px 24px;
+    padding: 48px 32px;
     margin-top: 80px;
 }
 
@@ -716,6 +796,12 @@ td code {
 }
 
 /* ===== RESPONSIVE ===== */
+
+@media (max-width: 900px) {
+    .nav-search {
+        display: none;
+    }
+}
 
 @media (max-width: 720px) {
     .header-inner {
@@ -777,7 +863,7 @@ td code {
     }
 
     .hero h1 {
-        font-size: 38px;
+        font-size: 42px;
     }
 
     .hero p {
@@ -797,12 +883,6 @@ td code {
 
     .intro-text h2 {
         font-size: 24px;
-    }
-
-    .feature {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
     }
 
     .page {
@@ -830,6 +910,10 @@ td code {
     .section-title {
         white-space: normal;
     }
+
+    .nav-icons {
+        display: none;
+    }
 }
 
 @media (max-width: 480px) {
@@ -840,7 +924,7 @@ td code {
         font-size: 24px;
     }
     .hero h1 {
-        font-size: 32px;
+        font-size: 36px;
     }
 }
 

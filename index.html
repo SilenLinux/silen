@@ -9,7 +9,7 @@
     <title>Silen Linux - an independent Linux distribution in development</title>
     <meta name="description" content="Silen Linux is an independent, lightweight Linux distribution under active development. Not a remix - built from the ground up with its own builder, init system, installer, and CRES package manager.">
     <link rel="icon" href="favicon.png" type="image/png">
-    <link rel="stylesheet" href="styles.css?v=6">
+    <link rel="stylesheet" href="styles.css?v=8">
 </head>
 <body>
 
@@ -19,13 +19,22 @@
             <img src="silen_logo_preffered.png" alt="Silen Linux logo">
             <h1>Silen Linux</h1>
         </a>
-        <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false"><svg class="icon icon-md" viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
+        <div class="nav-search">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+            <input type="text" placeholder="Search">
+        </div>
         <nav id="main-nav">
             <a href="index.html">Overview</a>
             <a href="get.html">Download</a>
             <a href="packages.html">Packages</a>
             <a href="github.html">GitHub</a>
         </nav>
+        <div class="nav-icons">
+            <a href="https://github.com/Cgtlpa/SilenLinux" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-4.77 0-0.84-.23-1.55-.55-2.22A11.7 11.7 0 0 0 9 15c-3.42-.23-6.5-1.43-7.83-2.84a9.17 9.17 0 0 0-1.13-2.73C2.29 7.46 3 5 4.42 5c1.07 0 2.12.28 2.94.71A11.25 11.25 0 0 1 9 19m14-6v3.87c0 2.19-.88 4.3-2.36 5.76A3.35 3.35 0 0 1 16.41 21a10 10 0 0 0-4.5-1.44c-1.7-1.44-2.54-3.65-2.25-5.76 0-1.5.37-2.86 1.05-4A11.7 11.7 0 0 1 9 3c2.86 0 5.6.87 7.83 2.49A16 16 0 0 1 20 9c0 1.2-.21 2.34-.67 3.37A10 10 0 0 0 23 13c0-.73-.09-1.45-.23-2.12A3.36 3.36 0 0 0 23 13z"/></svg>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false"><svg class="icon icon-md" viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
+        </div>
     </div>
 </div>
 
@@ -65,66 +74,44 @@
             <div class="section-divider"></div>
             <h2 class="section-title">Features</h2>
         </div>
-        <div class="features-list">
+        <div class="features-grid">
             <div class="feature">
-                <svg class="icon icon-accent" viewBox="0 0 24 24">
-                    <rect x="3" y="3" width="18" height="18" rx="2"/>
-                    <path d="M3 9h18M3 15h18"/>
-                </svg>
+                <svg class="icon icon-lg icon-accent" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18"/></svg>
                 <div class="feature-content">
                     <h3>CRES package manager</h3>
                     <p>A purpose-built package manager for Silen Linux. System packages install into <code>/</code>; applications stay isolated from the core system.</p>
                 </div>
             </div>
             <div class="feature">
-                <svg class="icon icon-accent" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="3"/>
-                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 14a1.65 1.65 0 0 0-1.82-.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0 1.82.33V9a2 2 0 0 1 2 2 2 2 0 0 1 2-2 2 2 0 0 1 2 2v3.5a1.65 1.65 0 0 0-.33 1.82z"/>
-                </svg>
+                <svg class="icon icon-lg icon-accent" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 14a1.65 1.65 0 0 0-1.82-.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0 1.82.33V9a2 2 0 0 1 2 2 2 2 0 0 1 2-2 2 2 0 0 1 2 2v3.5a1.65 1.65 0 0 0-.33 1.82z"/></svg>
                 <div class="feature-content">
                     <h3>Own init system</h3>
                     <p>OpenRC with elogind &mdash; not a remixed stack. The live environment and installed system both use Silen&rsquo;s own init.</p>
                 </div>
             </div>
             <div class="feature">
-                <svg class="icon icon-accent" viewBox="0 0 24 24">
-                    <path d="M21 14v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2"/>
-                    <line x1="7" y1="7" x2="7" y2="7"/>
-                    <line x1="17" y1="7" x2="17" y2="7"/>
-                    <path d="M3 11h18a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2"/>
-                </svg>
+                <svg class="icon icon-lg icon-accent" viewBox="0 0 24 24"><path d="M21 14v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2"/><line x1="7" y1="7" x2="7" y2="7"/><line x1="17" y1="7" x2="17" y2="7"/><path d="M3 11h18a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2"/></svg>
                 <div class="feature-content">
                     <h3>Offline text-menu installer</h3>
                     <p>A fully offline installer that finds the install medium itself, followed by the <code>silen-setup</code> wizard on first boot.</p>
                 </div>
             </div>
             <div class="feature">
-                <svg class="icon icon-accent" viewBox="0 0 24 24">
-                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                    <line x1="8" y1="21" x2="16" y2="21"/>
-                    <line x1="12" y1="17" x2="12" y2="21"/>
-                </svg>
+                <svg class="icon icon-lg icon-accent" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
                 <div class="feature-content">
                     <h3>InstantWM desktop</h3>
                     <p>InstantWM is the default desktop environment. The base remains minimal and you can install alternatives through CRES.</p>
                 </div>
             </div>
             <div class="feature">
-                <svg class="icon icon-accent" viewBox="0 0 24 24">
-                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
-                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
-                    <line x1="6" y1="6" x2="6.01" y2="6"/>
-                    <line x1="6" y1="18" x2="6.01" y2="18"/>
-                </svg>
+                <svg class="icon icon-lg icon-accent" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
                 <div class="feature-content">
                     <h3>Broad hardware support</h3>
                     <p>In-tree drivers and firmware for storage, Wi-Fi, and GPUs (amdgpu, i915, xe, nouveau, radeon) ship on the ISO.</p>
                 </div>
             </div>
             <div class="feature">
-                <svg class="icon icon-accent" viewBox="0 0 24 24">
-                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-                </svg>
+                <svg class="icon icon-lg icon-accent" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                 <div class="feature-content">
                     <h3>Linux 6.18 kernel</h3>
                     <p>Kernel 6.18.54 on x86_64, UEFI only, with GRUB2. Root on ext4, btrfs, or fat32.</p>
@@ -195,7 +182,7 @@
         <p>Silen Linux &bull; Independent &bull; AGPLv3</p>
         <nav>
             <a href="https://github.com/Cgtlpa/SilenLinux" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://discord.gg/WxbRRURcZ" target="_blank" rel="noopener">Discord</a>
+            <a href="https://discord.gg/6b4uaaQDzN" target="_blank" rel="noopener">Discord</a>
             <a href="https://huggingface.co/datasets/vgzz/silen-isos" target="_blank" rel="noopener">ISOs</a>
             <a href="https://huggingface.co/datasets/vgzz/spk-pkgs/tree/main/packages" target="_blank" rel="noopener">Package repo</a>
         </nav>
