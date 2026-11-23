@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silen Linux - source code on GitHub</title>
+    <meta name="description" content="Silen Linux source code and issue tracker on GitHub. Independent, lightweight Linux distribution developed in the open under AGPLv3.">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="styles.css?v=5">
+</head>
+<body>
+
+<div class="header">
+    <div class="header-inner">
+        <a class="brand" href="index.html">
+            <img src="silen_logo_preffered.png" alt="Silen Linux logo">
+            <h1>Silen Linux</h1>
+        </a>
+        <button class="mobile-menu-btn" aria-label="Toggle menu">&#9776;</button>
+        <nav id="main-nav">
+            <a href="index.html">Overview</a>
+            <a href="get.html">Download</a>
+            <a href="packages.html">Packages</a>
+            <a href="github.html" class="active">GitHub</a>
+        </nav>
+    </div>
+</div>
+
+<div class="page">
+    <section class="section">
+        <h2 class="section-title">Source code</h2>
+        <p>Silen Linux is developed in the open. The builder, live init system, installer, package manager (<code>spk</code>), and this website are all hosted in the public repository:</p>
+        <div style="text-align: center; margin: 32px 0;">
+            <a class="btn btn-primary" href="https://github.com/Cgtlpa/SilenLinux" target="_blank" rel="noopener">View on GitHub</a>
+        </div>
+        <p>The project is licensed under <strong>AGPLv3</strong>. Contributions, bug reports, and feedback are welcome through GitHub issues and pull requests.</p>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">What&rsquo;s in the repository</h2>
+        <ul>
+            <li><strong>Builder</strong> &mdash; constructs the live ISO and installed base system</li>
+            <li><strong>Live init</strong> &mdash; OpenRC + elogind for the live environment</li>
+            <li><strong>Installer</strong> &mdash; offline text-menu installer with <code>silen-setup</code> first-boot wizard</li>
+            <li><strong>Package manager</strong> &mdash; <code>spk</code>, a single Rust binary with no daemon</li>
+            <li><strong>Website</strong> &mdash; this site, served at https://cgtlpa.github.io/silen/</li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Community</h2>
+        <p>Follow development and discuss Silen Linux:</p>
+        <nav style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+            <a href="https://github.com/Cgtlpa/SilenLinux" target="_blank" rel="noopener">GitHub &mdash; source, issues, pull requests</a>
+            <a href="https://discord.gg/WxbRRURcZ" target="_blank" rel="noopener">Discord &mdash; chat with developers and users</a>
+        </nav>
+    </section>
+</div>
+
+<div class="footer">
+    <div class="footer-inner">
+        <p>Silen Linux &bull; Independent &bull; AGPLv3</p>
+        <nav>
+            <a href="https://github.com/Cgtlpa/SilenLinux" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://discord.gg/WxbRRURcZ" target="_blank" rel="noopener">Discord</a>
+            <a href="https://huggingface.co/datasets/vgzz/silen-isos" target="_blank" rel="noopener">ISOs</a>
+            <a href="https://huggingface.co/datasets/vgzz/spk-pkgs/tree/main/packages" target="_blank" rel="noopener">Package repo</a>
+        </nav>
+    </div>
+</div>
+
+<script>
+    const btn = document.querySelector('.mobile-menu-btn');
+    const nav = document.getElementById('main-nav');
+    btn.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open);
+    });
+</script>
+
+</body>
+</html>
