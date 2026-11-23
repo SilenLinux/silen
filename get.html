@@ -38,19 +38,21 @@
             <h2 class="section-title">Images</h2>
         </div>
         <p class="muted" style="font-size:13px;">Release v1 &bull; kernel 6.18.54 &bull; x86_64, UEFI only.</p>
+        <div class="table-wrap">
         <table>
             <tr><th>Variant</th><th>File</th><th>Status &amp; notes</th></tr>
             <tr>
                 <td>Standard</td>
                 <td><code>silen-linux.iso</code></td>
-                <td><strong>Currently unavailable</strong><br>Open drivers with GPU firmware. NVIDIA runs on nouveau; the proprietary driver can be added after install.</td>
+                <td><span class="status-unavailable">Unavailable</span><br>Open drivers with GPU firmware. NVIDIA runs on nouveau; the proprietary driver can be added after install.</td>
             </tr>
             <tr>
                 <td>NVIDIA</td>
                 <td><code>silen-linux-nvidia.iso</code></td>
-                <td><strong>Currently unavailable</strong><br>Same base; installs the proprietary driver automatically when an NVIDIA GPU is detected.</td>
+                <td><span class="status-unavailable">Unavailable</span><br>Same base; installs the proprietary driver automatically when an NVIDIA GPU is detected.</td>
             </tr>
         </table>
+        </div>
         <p class="muted" style="margin-top:16px; font-size:13px;">Hosted on Hugging Face &mdash; GitHub caps files at 2 GB.</p>
     </section>
 
@@ -60,24 +62,26 @@
             <div class="section-divider"></div>
             <h2 class="section-title">Other bases</h2>
         </div>
+        <div class="table-wrap">
         <table>
             <tr><th>Variant</th><th>File</th><th>Notes</th></tr>
             <tr>
                 <td><a href="https://huggingface.co/datasets/vgzz/silen-isos/resolve/main/silen-linux-arch.iso" target="_blank" rel="noopener">Silen Arch</a></td>
                 <td><code>silen-linux-arch.iso</code><br>2.0 GB</td>
-                <td>Arch Linux base. The installer builds a real Arch system online (pacstrap); kernel and desktop are picked during install.</td>
+                <td><span class="status-available">Available</span><br>Arch Linux base. The installer builds a real Arch system online (pacstrap); kernel and desktop are picked during install.</td>
             </tr>
             <tr>
                 <td>Silen Debian</td>
                 <td class="muted">Coming soon</td>
-                <td>Debian base</td>
+                <td><span class="status-coming">Coming soon</span><br>Debian base</td>
             </tr>
             <tr>
                 <td><a href="https://huggingface.co/datasets/vgzz/silen-isos/resolve/main/silen-linux-void.iso" target="_blank" rel="noopener">Silen Void</a></td>
                 <td><code>silen-linux-void.iso</code><br>1.4 GB</td>
-                <td>Void Linux base with runit and xbps. Guided installer; kernel and desktop are picked during install.</td>
+                <td><span class="status-available">Available</span><br>Void Linux base with runit and xbps. Guided installer; kernel and desktop are picked during install.</td>
             </tr>
         </table>
+        </div>
     </section>
 
     <!-- Checksums -->
