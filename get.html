@@ -3,13 +3,13 @@
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silen Linux - download</title>
     <meta name="description" content="Silen Linux ISO images: standard, NVIDIA, Arch and Void variants, with sha256 checksums. Mainline variants currently unavailable.">
     <link rel="icon" href="favicon.png" type="image/png">
-    <link rel="stylesheet" href="styles.css?v=5">
+    <link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
 
@@ -19,7 +19,7 @@
             <img src="silen_logo_preffered.png" alt="Silen Linux logo">
             <h1>Silen Linux</h1>
         </a>
-        <button class="mobile-menu-btn" aria-label="Toggle menu">&#9776;</button>
+        <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false"><svg class="icon icon-md" viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
         <nav id="main-nav">
             <a href="index.html">Overview</a>
             <a href="get.html" class="active">Download</a>
@@ -30,15 +30,20 @@
 </div>
 
 <div class="page">
+
+    <!-- Images -->
     <section class="section">
-        <h2 class="section-title">Images</h2>
-        <p class="muted" style="margin-top: -8px;">Release v1 &bull; kernel 6.18.54 &bull; x86_64, UEFI only.</p>
+        <div class="section-header">
+            <div class="section-divider"></div>
+            <h2 class="section-title">Images</h2>
+        </div>
+        <p class="muted" style="font-size:13px;">Release v1 &bull; kernel 6.18.54 &bull; x86_64, UEFI only.</p>
         <table>
             <tr><th>Variant</th><th>File</th><th>Status &amp; notes</th></tr>
             <tr>
                 <td>Standard</td>
                 <td><code>silen-linux.iso</code></td>
-                <td><strong>Currently unavailable</strong><br>Open drivers with GPU firmware. NVIDIA runs on nouveau; <code>spk get nvidia-drivers</code> adds the proprietary driver.</td>
+                <td><strong>Currently unavailable</strong><br>Open drivers with GPU firmware. NVIDIA runs on nouveau; the proprietary driver can be added after install.</td>
             </tr>
             <tr>
                 <td>NVIDIA</td>
@@ -46,11 +51,15 @@
                 <td><strong>Currently unavailable</strong><br>Same base; installs the proprietary driver automatically when an NVIDIA GPU is detected.</td>
             </tr>
         </table>
-        <p class="muted" style="margin-top: 16px;">Hosted on Hugging Face &mdash; GitHub caps files at 2 GB.</p>
+        <p class="muted" style="margin-top:16px; font-size:13px;">Hosted on Hugging Face &mdash; GitHub caps files at 2 GB.</p>
     </section>
 
+    <!-- Other bases -->
     <section class="section">
-        <h2 class="section-title">Other bases</h2>
+        <div class="section-header">
+            <div class="section-divider"></div>
+            <h2 class="section-title">Other bases</h2>
+        </div>
         <table>
             <tr><th>Variant</th><th>File</th><th>Notes</th></tr>
             <tr>
@@ -71,17 +80,25 @@
         </table>
     </section>
 
+    <!-- Checksums -->
     <section class="section">
-        <h2 class="section-title">Checksums</h2>
-        <pre><code>5ebf50fbc0597f415024a287c39465c213f0d930a0d67bfc1e026e0fc4d1b22a  silen-linux.iso
+        <div class="section-header">
+            <div class="section-divider"></div>
+            <h2 class="section-title">Checksums</h2>
+        </div>
+<pre><code>5ebf50fbc0597f415024a287c39465c213f0d930a0d67bfc1e026e0fc4d1b22a  silen-linux.iso
 d29f9d16e8799f3596264b72253bc22af5cff89545986909d86fd2aaad6ded46  silen-linux-nvidia.iso
 b9c90a6327be8b57cedf2703c7fcdade540832dd798bac40f8f49475199a3233  silen-linux-arch.iso
 1577e9f4458dd4e47f0ef74e26db37cc810caf959ae571e6f455eb51135d407b  silen-linux-void.iso</code></pre>
         <p>Check with <code>sha256sum silen-linux.iso</code> before writing.</p>
     </section>
 
+    <!-- Requirements -->
     <section class="section">
-        <h2 class="section-title">Requirements</h2>
+        <div class="section-header">
+            <div class="section-divider"></div>
+            <h2 class="section-title">Requirements</h2>
+        </div>
         <ul>
             <li>x86_64 PC &mdash; main images need <strong>UEFI boot</strong>; Silen Arch also boots BIOS.</li>
             <li>A USB stick and a disk the installer may wipe (GPT).</li>
@@ -89,20 +106,29 @@ b9c90a6327be8b57cedf2703c7fcdade540832dd798bac40f8f49475199a3233  silen-linux-ar
         </ul>
     </section>
 
+    <!-- Write to USB -->
     <section class="section">
-        <h2 class="section-title">Write to USB</h2>
+        <div class="section-header">
+            <div class="section-divider"></div>
+            <h2 class="section-title">Write to USB</h2>
+        </div>
 <pre><code># replace sdX with your stick
 sudo dd if=silen-linux.iso of=/dev/sdX bs=4M status=progress oflag=sync</code></pre>
-        <p class="muted">Ventoy works too &mdash; the medium is found automatically.</p>
+        <p class="muted" style="font-size:13px;">Ventoy works too &mdash; the medium is found automatically.</p>
     </section>
 
+    <!-- First boot -->
     <section class="section">
-        <h2 class="section-title">First boot</h2>
+        <div class="section-header">
+            <div class="section-divider"></div>
+            <h2 class="section-title">First boot</h2>
+        </div>
 <pre><code>iwctl        # connect to Wi-Fi
 silen-setup  # wizard: desktop, login manager, firmware, extras
 silenfetch   # logo + system info</code></pre>
-        <p><a href="packages.html">228 packages</a> in the repository.</p>
+        <p><a href="packages.html">Packages</a> in the CRES repository.</p>
     </section>
+
 </div>
 
 <div class="footer">

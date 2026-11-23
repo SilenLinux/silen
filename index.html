@@ -3,13 +3,13 @@
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silen Linux - an independent Linux distribution in development</title>
-    <meta name="description" content="Silen Linux is an independent, lightweight Linux distribution under active development. Not a remix - built from the ground up with its own builder, init system, installer, and package manager.">
+    <meta name="description" content="Silen Linux is an independent, lightweight Linux distribution under active development. Not a remix - built from the ground up with its own builder, init system, installer, and CRES package manager.">
     <link rel="icon" href="favicon.png" type="image/png">
-    <link rel="stylesheet" href="styles.css?v=5">
+    <link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
 
@@ -19,7 +19,7 @@
             <img src="silen_logo_preffered.png" alt="Silen Linux logo">
             <h1>Silen Linux</h1>
         </a>
-        <button class="mobile-menu-btn" aria-label="Toggle menu">&#9776;</button>
+        <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false"><svg class="icon icon-md" viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
         <nav id="main-nav">
             <a href="index.html">Overview</a>
             <a href="get.html">Download</a>
@@ -30,10 +30,12 @@
 </div>
 
 <div class="page">
+
+    <!-- Hero -->
     <section class="hero">
         <img src="silen_logo_preffered.png" alt="Silen Linux logo" class="hero-logo">
         <h1>Silen Linux</h1>
-        <p>An independent, lightweight Linux distribution &mdash; not a remix. Built from the ground up with its own builder, init system, installer, and package manager. A minimal live environment that installs a clean base you build on.</p>
+        <p>An independent, lightweight Linux distribution &mdash; not a remix. Built from the ground up with its own builder, init system, installer, and CRES package manager. A minimal live environment that installs a clean base you build on.</p>
         <div class="coming-soon">Under active development &bull; Coming soon</div>
         <div class="actions">
             <a class="btn btn-primary" href="https://github.com/Cgtlpa/SilenLinux" target="_blank" rel="noopener">View on GitHub</a>
@@ -41,65 +43,151 @@
         </div>
     </section>
 
-    <section class="section">
-        <h2 class="section-title">Features</h2>
-        <div class="features-grid">
-            <div class="feature">
-                <span class="feature-icon" aria-hidden="true">&#128214;</span>
-                <h3>Own package manager</h3>
-                <p><code>spk</code>, a single Rust binary with no daemon. System packages install into <code>/</code>; leaf apps stay isolated under <code>/spk_pkgs</code>.</p>
+    <!-- Introduction -->
+    <section class="intro">
+        <div class="intro-brand">
+            <img src="silen_logo_preffered.png" alt="Silen Linux logo" class="intro-logo">
+            <div style="font-family:'Space Grotesk',sans-serif; font-size:16px; font-weight:500; letter-spacing:-0.01em; color:var(--text);">
+                Silen Linux
             </div>
-            <div class="feature">
-                <span class="feature-icon" aria-hidden="true">&#128161;</span>
-                <h3>Own init system</h3>
-                <p>OpenRC + elogind &mdash; not a remixed stack. The live init and installed system are Silen&rsquo;s own.</p>
-            </div>
-            <div class="feature">
-                <span class="feature-icon" aria-hidden="true">&#9993;</span>
-                <h3>Offline installer</h3>
-                <p>A fully text-menu based installer that finds the install medium itself, followed by the <code>silen-setup</code> wizard on first boot.</p>
-            </div>
-            <div class="feature">
-                <span class="feature-icon" aria-hidden="true">&#127968;</span>
-                <h3>No forced desktop</h3>
-                <p>A minimal live environment that installs a clean base. You choose the desktop, login manager, and extras during setup.</p>
-            </div>
-            <div class="feature">
-                <span class="feature-icon" aria-hidden="true">&#128736;</span>
-                <h3>Broad hardware support</h3>
-                <p>In-tree drivers and firmware for storage, Wi-Fi, and GPUs (amdgpu, i915, xe, nouveau, radeon) ship on the ISO.</p>
-            </div>
-            <div class="feature">
-                <span class="feature-icon" aria-hidden="true">&#128217;</span>
-                <h3>Kernel 6.18</h3>
-                <p>Linux 6.18.54 on x86_64, UEFI only, with GRUB2. Root on ext4, btrfs, or fat32.</p>
-            </div>
+            <p style="font-size:13px; color:var(--text-muted); margin-top:8px;">Independent &bull; Minimal &bull; AGPLv3</p>
         </div>
-    </section>
-
-    <section class="section">
-        <h2 class="section-title">About Silen</h2>
-        <div class="about-content">
-            <p>Silen Linux is an independent, lightweight Linux distribution. It is not a remix of another distribution &mdash; the builder, live init, installer, and package manager are all developed in-house.</p>
+        <div class="intro-text">
+            <h2>Built from the ground up</h2>
+            <p>Silen Linux is an independent distribution. It is not a remix of another system &mdash; the builder, live init, installer, and package manager are all developed in-house.</p>
             <p>The goal is a minimal, clean base you build on. There is no forced desktop and no bloat. After installation, the <code>silen-setup</code> wizard lets you choose your desktop, login manager, firmware, and extras.</p>
-            <p>The project is licensed under AGPLv3 and development happens in the open on GitHub.</p>
         </div>
     </section>
 
+    <!-- Features -->
     <section class="section">
-        <h2 class="section-title">Development Status</h2>
-        <div class="dev-status">
-            <h2>Under active development</h2>
-            <p>Silen Linux is not yet ready for a public stable release. The project is actively being developed, and ISOs are not currently available for the mainline standard or NVIDIA variants.</p>
-            <ul>
-                <li>Mainline standard and NVIDIA ISOs &mdash; currently unavailable</li>
-                <li>Silen Arch (Arch Linux base) &mdash; available</li>
-                <li>Silen Void (Void Linux base with runit) &mdash; available</li>
-                <li>Silen Debian (Debian base) &mdash; coming soon</li>
-            </ul>
-            <p>Follow development and view the source at <a href="https://github.com/Cgtlpa/SilenLinux" target="_blank" rel="noopener">github.com/Cgtlpa/SilenLinux</a>.</p>
+        <div class="section-header">
+            <div class="section-divider"></div>
+            <h2 class="section-title">Features</h2>
+        </div>
+        <div class="features-list">
+            <div class="feature">
+                <svg class="icon icon-accent" viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <path d="M3 9h18M3 15h18"/>
+                </svg>
+                <div class="feature-content">
+                    <h3>CRES package manager</h3>
+                    <p>A purpose-built package manager for Silen Linux. System packages install into <code>/</code>; applications stay isolated from the core system.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <svg class="icon icon-accent" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 14a1.65 1.65 0 0 0-1.82-.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0 1.82.33V9a2 2 0 0 1 2 2 2 2 0 0 1 2-2 2 2 0 0 1 2 2v3.5a1.65 1.65 0 0 0-.33 1.82z"/>
+                </svg>
+                <div class="feature-content">
+                    <h3>Own init system</h3>
+                    <p>OpenRC with elogind &mdash; not a remixed stack. The live environment and installed system both use Silen&rsquo;s own init.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <svg class="icon icon-accent" viewBox="0 0 24 24">
+                    <path d="M21 14v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2"/>
+                    <line x1="7" y1="7" x2="7" y2="7"/>
+                    <line x1="17" y1="7" x2="17" y2="7"/>
+                    <path d="M3 11h18a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2"/>
+                </svg>
+                <div class="feature-content">
+                    <h3>Offline text-menu installer</h3>
+                    <p>A fully offline installer that finds the install medium itself, followed by the <code>silen-setup</code> wizard on first boot.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <svg class="icon icon-accent" viewBox="0 0 24 24">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                    <line x1="8" y1="21" x2="16" y2="21"/>
+                    <line x1="12" y1="17" x2="12" y2="21"/>
+                </svg>
+                <div class="feature-content">
+                    <h3>No forced desktop</h3>
+                    <p>A minimal live environment that installs a clean base. You choose the desktop, login manager, and extras during setup.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <svg class="icon icon-accent" viewBox="0 0 24 24">
+                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+                    <line x1="6" y1="6" x2="6.01" y2="6"/>
+                    <line x1="6" y1="18" x2="6.01" y2="18"/>
+                </svg>
+                <div class="feature-content">
+                    <h3>Broad hardware support</h3>
+                    <p>In-tree drivers and firmware for storage, Wi-Fi, and GPUs (amdgpu, i915, xe, nouveau, radeon) ship on the ISO.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <svg class="icon icon-accent" viewBox="0 0 24 24">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                </svg>
+                <div class="feature-content">
+                    <h3>Linux 6.18 kernel</h3>
+                    <p>Kernel 6.18.54 on x86_64, UEFI only, with GRUB2. Root on ext4, btrfs, or fat32.</p>
+                </div>
+            </div>
         </div>
     </section>
+
+    <!-- Architecture / Stack -->
+    <section class="section">
+        <div class="section-header">
+            <div class="section-divider"></div>
+            <h2 class="section-title">Technical stack</h2>
+        </div>
+        <div class="stack">
+            <div class="stack-title">Components developed in-house</div>
+            <div class="stack-items">
+                <div class="stack-item">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    <span>ISO builder</span>
+                </div>
+                <div class="stack-item">
+                    <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 14a1.65 1.65 0 0 0-1.82-.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0 1.82.33V9a2 2 0 0 1 2 2 2 2 0 0 1 2-2 2 2 0 0 1 2 2v3.5a1.65 1.65 0 0 0-.33 1.82z"/></svg>
+                    <span>OpenRC + <code>elogind</code> init</span>
+                </div>
+                <div class="stack-item">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M21 14v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2"/><line x1="7" y1="7" x2="7" y2="7"/><line x1="17" y1="7" x2="17" y2="7"/><path d="M3 11h18a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2"/></svg>
+                    <span>Offline text-menu installer</span>
+                </div>
+                <div class="stack-item">
+                    <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18"/></svg>
+                    <span>CRES package manager</span>
+                </div>
+                <div class="stack-item">
+                    <svg class="icon" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    <span>Linux 6.18.54 kernel</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development status -->
+    <section class="section">
+        <div class="section-header">
+            <div class="section-divider"></div>
+            <h2 class="section-title">Development status</h2>
+        </div>
+        <div class="dev-status">
+            <div class="dev-status-header">
+                <svg class="icon icon-lg icon-muted" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                <h2>Under active development</h2>
+            </div>
+            <p>Silen Linux is not yet ready for a public stable release. The project is actively being developed, and mainline ISO images are currently unavailable.</p>
+            <ul>
+                <li class="available">Silen Arch (Arch Linux base) &mdash; available</li>
+                <li class="available">Silen Void (Void Linux base with runit) &mdash; available</li>
+                <li>Silen Debian (Debian base) &mdash; coming soon</li>
+                <li>Mainline standard and NVIDIA ISOs &mdash; currently unavailable</li>
+            </ul>
+            <p style="margin-top:24px;">Follow development and view the source at <a href="https://github.com/Cgtlpa/SilenLinux" target="_blank" rel="noopener">github.com/Cgtlpa/SilenLinux</a>.</p>
+        </div>
+    </section>
+
 </div>
 
 <div class="footer">
