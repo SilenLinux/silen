@@ -644,8 +644,15 @@ nav a.active::after {
     border-color: var(--accent);
 }
 
-.download-card .card-header {
-    margin-bottom: 20px;
+.download-card .card-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    font-family: "Space Grotesk", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    padding: 3px 8px;
+    border-radius: var(--radius);
+    margin-bottom: 16px;
 }
 
 .download-card h3 {
@@ -667,6 +674,27 @@ nav a.active::after {
     margin: 0 0 24px;
     line-height: 1.6;
     flex: 1;
+}
+
+/* ===== DOWNLOAD HERO ===== */
+
+.download-hero {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.download-hero h2 {
+    font-size: 44px;
+    margin: 0 0 16px;
+    letter-spacing: -0.04em;
+}
+
+.download-hero p {
+    font-size: 17px;
+    color: var(--text-muted);
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.7;
 }
 
 .download-card .card-btn {

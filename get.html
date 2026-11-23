@@ -7,9 +7,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silen Linux - download</title>
-    <meta name="description" content="Silen Linux ISO images: standard, NVIDIA, Arch and Void variants, with sha256 checksums. Mainline variants currently unavailable.">
+    <meta name="description" content="Silen Linux ISO images: standard, NVIDIA, Arch and Void variants. Mainline variants currently unavailable.">
     <link rel="icon" href="favicon.png" type="image/png">
-    <link rel="stylesheet" href="styles.css?v=8">
+    <link rel="stylesheet" href="styles.css?v=9">
 </head>
 <body>
 
@@ -40,47 +40,32 @@
 
 <div class="page">
 
+    <!-- Hero-style intro -->
+    <section class="download-hero">
+        <div class="download-hero-text">
+            <h2>Download</h2>
+            <p>Silen Linux ISOs are hosted on Hugging Face. Mainline standard and NVIDIA images are currently unavailable.</p>
+        </div>
+    </section>
+
     <!-- Images -->
     <section class="section">
-        <div class="section-header">
-            <div class="section-divider"></div>
-            <h2 class="section-title">Images</h2>
-        </div>
-        <p class="muted" style="font-size:13px;">Release v1 &bull; kernel 6.18.54 &bull; x86_64, UEFI only.</p>
-
         <div class="download-cards">
             <div class="download-card">
-                <div class="card-header">
-                    <span class="status-unavailable">Unavailable</span>
-                </div>
+                <div class="card-badge status-unavailable">Unavailable</div>
                 <h3>Standard</h3>
                 <p class="card-file"><code>silen-linux.iso</code></p>
                 <p class="card-desc">Open drivers with GPU firmware. NVIDIA runs on nouveau; the proprietary driver can be added after install.</p>
                 <a class="btn btn-outline card-btn" href="https://huggingface.co/datasets/vgzz/silen-isos" target="_blank" rel="noopener">Visit ISO repo</a>
             </div>
             <div class="download-card">
-                <div class="card-header">
-                    <span class="status-unavailable">Unavailable</span>
-                </div>
+                <div class="card-badge status-unavailable">Unavailable</div>
                 <h3>NVIDIA</h3>
                 <p class="card-file"><code>silen-linux-nvidia.iso</code></p>
                 <p class="card-desc">Same base; installs the proprietary driver automatically when an NVIDIA GPU is detected.</p>
                 <a class="btn btn-outline card-btn" href="https://huggingface.co/datasets/vgzz/silen-isos" target="_blank" rel="noopener">Visit ISO repo</a>
             </div>
         </div>
-        <p class="muted" style="margin-top:24px; font-size:13px;">Hosted on Hugging Face &mdash; GitHub caps files at 2 GB.</p>
-    </section>
-
-    <!-- Checksums -->
-    <section class="section">
-        <div class="section-header">
-            <div class="section-divider"></div>
-            <h2 class="section-title">Checksums</h2>
-        </div>
-<pre><code>5ebf50fbc0597f415024a287c39465c213f0d930a0d67bfc1e026e0fc4d1b22a  silen-linux.iso
-d29f9d16e8799f3596264b72253bc22af5cff89545986909d86fd2aaad6ded46  silen-linux-nvidia.iso
-b9c90a6327be8b57cedf2703c7fcdade540832dd798bac40f8f49475199a3233  silen-linux-arch.iso
-1577e9f4458dd4e47f0ef74e26db37cc810caf959ae571e6f455eb51135d407b  silen-linux-void.iso</code></pre>
     </section>
 
     <!-- Requirements -->
