@@ -7,115 +7,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silen Linux - download</title>
-    <meta name="description" content="Download Silen Linux ISO images: standard, NVIDIA, Arch and Void variants, with sha256 checksums.">
-    <link rel="stylesheet" href="styles.css?v=4">
+    <meta name="description" content="Silen Linux ISO images: standard, NVIDIA, Arch and Void variants, with sha256 checksums. Mainline variants currently unavailable.">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="styles.css?v=5">
 </head>
-<body class="backgrnd">
+<body>
 
 <div class="header">
-    <div>
-        <h1>Silen Linux</h1>
-        <h5>Simple, Reliable, Minimal</h5>
+    <div class="header-inner">
+        <a class="brand" href="index.html">
+            <img src="silen_logo_preffered.png" alt="Silen Linux logo">
+            <h1>Silen Linux</h1>
+        </a>
+        <button class="mobile-menu-btn" aria-label="Toggle menu">&#9776;</button>
+        <nav id="main-nav">
+            <a href="index.html">Overview</a>
+            <a href="get.html" class="active">Download</a>
+            <a href="packages.html">Packages</a>
+            <a href="https://github.com/Cgtlpa/SilenLinux" target="_blank" rel="noopener">GitHub</a>
+        </nav>
     </div>
-    <nav>
-        <a href="index.html">Home</a>
-        <a class="now" href="get.html">Download</a>
-        <a href="packages.html">Packages</a>
-        <a href="https://github.com/Cgtlpa/SilenLinux" target="_blank" rel="noopener">GitHub</a>
-    </nav>
 </div>
 
-<div class="main">
-
-    <div class="box" id="images">
-        <h2>Images</h2>
-        <p class="muted">Release v1 - kernel 6.18.54 - x86_64, UEFI only.</p>
+<div class="page">
+    <section class="section">
+        <h2 class="section-title">Images</h2>
+        <p class="muted" style="margin-top: -8px;">Release v1 &bull; kernel 6.18.54 &bull; x86_64, UEFI only.</p>
         <table>
-            <tr><th>Variant</th><th>File</th><th>Notes</th></tr>
+            <tr><th>Variant</th><th>File</th><th>Status &amp; notes</th></tr>
             <tr>
                 <td>Standard</td>
-                <td><code>silen-linux.iso</code><br><span class="muted">currently unavailable</span></td>
-                <td>Open drivers with GPU firmware. NVIDIA runs on nouveau -
-                <code>spk get nvidia-drivers</code> adds the proprietary driver.</td>
+                <td><code>silen-linux.iso</code></td>
+                <td><strong>Currently unavailable</strong><br>Open drivers with GPU firmware. NVIDIA runs on nouveau; <code>spk get nvidia-drivers</code> adds the proprietary driver.</td>
             </tr>
             <tr>
                 <td>NVIDIA</td>
-                <td><code>silen-linux-nvidia.iso</code><br><span class="muted">currently unavailable</span></td>
-                <td>Same base; installs the proprietary driver automatically when an NVIDIA
-                GPU is detected.</td>
+                <td><code>silen-linux-nvidia.iso</code></td>
+                <td><strong>Currently unavailable</strong><br>Same base; installs the proprietary driver automatically when an NVIDIA GPU is detected.</td>
             </tr>
         </table>
-        <p class="muted">Hosted on Hugging Face - GitHub caps files at 2 GB.</p>
-    </div>
+        <p class="muted" style="margin-top: 16px;">Hosted on Hugging Face &mdash; GitHub caps files at 2 GB.</p>
+    </section>
 
-    <div class="box" id="bases">
-        <h2>Other bases</h2>
+    <section class="section">
+        <h2 class="section-title">Other bases</h2>
         <table>
             <tr><th>Variant</th><th>File</th><th>Notes</th></tr>
             <tr>
-                <td><a href="https://huggingface.co/datasets/vgzz/silen-isos/resolve/main/silen-linux-arch.iso">Silen Arch</a></td>
+                <td><a href="https://huggingface.co/datasets/vgzz/silen-isos/resolve/main/silen-linux-arch.iso" target="_blank" rel="noopener">Silen Arch</a></td>
                 <td><code>silen-linux-arch.iso</code><br>2.0 GB</td>
-                <td>Arch Linux base. The installer builds a real Arch system online
-                (pacstrap); kernel and desktop are picked during install.</td>
+                <td>Arch Linux base. The installer builds a real Arch system online (pacstrap); kernel and desktop are picked during install.</td>
             </tr>
             <tr>
                 <td>Silen Debian</td>
-                <td class="muted">coming soon</td>
+                <td class="muted">Coming soon</td>
                 <td>Debian base</td>
             </tr>
             <tr>
-                <td><a href="https://huggingface.co/datasets/vgzz/silen-isos/resolve/main/silen-linux-void.iso">Silen Void</a></td>
+                <td><a href="https://huggingface.co/datasets/vgzz/silen-isos/resolve/main/silen-linux-void.iso" target="_blank" rel="noopener">Silen Void</a></td>
                 <td><code>silen-linux-void.iso</code><br>1.4 GB</td>
-                <td>Void Linux base with runit and xbps. Guided installer; kernel
-                and desktop are picked during install.</td>
+                <td>Void Linux base with runit and xbps. Guided installer; kernel and desktop are picked during install.</td>
             </tr>
         </table>
-    </div>
+    </section>
 
-    <div class="box" id="checksums">
-        <h2>Checksums</h2>
-<pre><code>5ebf50fbc0597f415024a287c39465c213f0d930a0d67bfc1e026e0fc4d1b22a  silen-linux.iso
+    <section class="section">
+        <h2 class="section-title">Checksums</h2>
+        <pre><code>5ebf50fbc0597f415024a287c39465c213f0d930a0d67bfc1e026e0fc4d1b22a  silen-linux.iso
 d29f9d16e8799f3596264b72253bc22af5cff89545986909d86fd2aaad6ded46  silen-linux-nvidia.iso
 b9c90a6327be8b57cedf2703c7fcdade540832dd798bac40f8f49475199a3233  silen-linux-arch.iso
 1577e9f4458dd4e47f0ef74e26db37cc810caf959ae571e6f455eb51135d407b  silen-linux-void.iso</code></pre>
         <p>Check with <code>sha256sum silen-linux.iso</code> before writing.</p>
-    </div>
+    </section>
 
-    <div class="box" id="requirements">
-        <h2>Requirements</h2>
+    <section class="section">
+        <h2 class="section-title">Requirements</h2>
         <ul>
-            <li>x86_64 PC - main images need <strong>UEFI boot</strong>; Silen Arch also boots BIOS.</li>
+            <li>x86_64 PC &mdash; main images need <strong>UEFI boot</strong>; Silen Arch also boots BIOS.</li>
             <li>A USB stick and a disk the installer may wipe (GPT).</li>
             <li>Root on ext4, btrfs or fat32; the base install is offline.</li>
         </ul>
-    </div>
+    </section>
 
-    <div class="box" id="usb">
-        <h2>Write to USB</h2>
+    <section class="section">
+        <h2 class="section-title">Write to USB</h2>
 <pre><code># replace sdX with your stick
 sudo dd if=silen-linux.iso of=/dev/sdX bs=4M status=progress oflag=sync</code></pre>
-        <p class="muted">Ventoy works too - the medium is found automatically.</p>
-    </div>
+        <p class="muted">Ventoy works too &mdash; the medium is found automatically.</p>
+    </section>
 
-    <div class="box" id="firstboot">
-        <h2>First boot</h2>
+    <section class="section">
+        <h2 class="section-title">First boot</h2>
 <pre><code>iwctl        # connect to Wi-Fi
 silen-setup  # wizard: desktop, login manager, firmware, extras
 silenfetch   # logo + system info</code></pre>
         <p><a href="packages.html">228 packages</a> in the repository.</p>
-    </div>
-
+    </section>
 </div>
 
 <div class="footer">
-    <span>Silen Linux v1 - kernel 6.18.54 - AGPLv3</span>
-    <nav>
-        <a href="https://github.com/Cgtlpa/SilenLinux" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://discord.gg/WxbRRURcZ" target="_blank" rel="noopener">Discord</a>
-        <a href="https://huggingface.co/datasets/vgzz/silen-isos" target="_blank" rel="noopener">ISOs</a>
-        <a href="https://huggingface.co/datasets/vgzz/spk-pkgs/tree/main/packages" target="_blank" rel="noopener">Package repo</a>
-    </nav>
+    <div class="footer-inner">
+        <p>Silen Linux v1 &bull; kernel 6.18.54 &bull; AGPLv3</p>
+        <nav>
+            <a href="https://github.com/Cgtlpa/SilenLinux" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://discord.gg/WxbRRURcZ" target="_blank" rel="noopener">Discord</a>
+            <a href="https://huggingface.co/datasets/vgzz/silen-isos" target="_blank" rel="noopener">ISOs</a>
+            <a href="https://huggingface.co/datasets/vgzz/spk-pkgs/tree/main/packages" target="_blank" rel="noopener">Package repo</a>
+        </nav>
+    </div>
 </div>
+
+<script>
+    const btn = document.querySelector('.mobile-menu-btn');
+    const nav = document.getElementById('main-nav');
+    btn.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open);
+    });
+</script>
 
 </body>
 </html>
